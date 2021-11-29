@@ -9,6 +9,13 @@
      <script src="jquery.js"></script>
      <style>
 
+          .container{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+          }
+
           .box{
                width: 220px;
                border: 1px solid #a22;
@@ -35,29 +42,39 @@
      </style>
 </head>
 <body>
-     <div class="box">
-          <h3>One</h3>
-          <ul>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-          </ul>
+     <div class="container">
+          <div class="box">
+               <h3>One</h3>
+               <ul>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+               </ul>
+          </div>
+          <div class="box">
+               <h3>Two</h3>
+               <ul>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+               </ul>
+          </div>
+          <div class="box">
+               <h3>three</h3>
+               <ul>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+                    <li><a href="#"> List Items 🕊 </a></li>
+               </ul>
+          </div>
      </div>
-     <div class="box">
-          <h3>Two</h3>
-          <ul>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-          </ul>
-     </div>
-     <div class="box">
-          <h3>three</h3>
-          <ul>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-               <li><a href="#"> List Items 🕊 </a></li>
-          </ul>
-     </div>
+
+     <script>
+          $("h3").click(function(){
+               var parent = $(this).parent();
+               $("ul",parent).slideToggle("fast");
+               $(this).toggleClass("up");
+          });
+     </script>
 </body>
 </html>
